@@ -1,0 +1,3 @@
+font-hack-nerd-font
+iterm2
+redis-stack-server

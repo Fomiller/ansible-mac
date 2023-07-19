@@ -1,5 +1,0 @@
-tasks:
-  - name: Install Asciidoctor
-    homebrew:
-      name: asciidoctor
-      state: present

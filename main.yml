@@ -108,3 +108,20 @@
       loop: "{{data.git_repos}}"
       tags:
         - git
+          
+    - name: Golang | Path
+      debug:
+        msg: "https://go.dev/dl/go{{ data.golang_version }}.{{ ansible_os_family|lower }}-{{ ansible_architecture }}.pkg"
+      tags:
+        - debug
+          
+    - name: Golang | Install
+      become: true
+      unarchive:
+        src: "https://go.dev/dl/go{{ data.golang_version }}.{{ ansible_os_family|lower }}-{{ ansible_architecture }}.tar.gz"
+        dest: /usr/local
+        mode: 0755
+        remote_src: yes
+        creates: /usr/local
+      tags:
+        - golang

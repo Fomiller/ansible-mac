@@ -10,15 +10,15 @@
 - [ ] Python version setup (using pyenv)
 - [ ] Python virtualenvs setup
 - [x] Clone all git repos
-- [ ] Terraform install
-- [ ] Terraform update
-- [ ] Terragrunt install 
-- [ ] Terragrunt update 
-- [ ] Docker install
-- [ ] Podman install
+- [x] Terraform install (using homebrew)
+- [x] Terraform update (using homebrew)
+- [x] Terragrunt install (using homebrew)
+- [x] Terragrunt update (using homebrew)
+- [x] Docker install (using homebrew) 
+- [x] Podman install (using homebrew)
 - [x] Neovim install
 - [ ] Neovim update (will need to get latest tags and parse through to find the latest)
-- [ ] Tmux install
+- [ ] Tmux install 
 - [ ] Dotfiles install
 - [ ] App install (spotify, chrome, firefox, etc.)?
-- [ ] Break apart ansible playbook into tasks
+- [x] Break apart ansible playbook into tasks

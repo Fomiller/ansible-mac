@@ -20,7 +20,6 @@ brew_formulas:
   - git-filter-repo
   - glow
   - gnu-tar
-  - go
   - helix
   - icu4c
   - just
@@ -94,29 +93,29 @@ cargo_binaries:
     
 git_repos:
   - repo: git@github.com:Fomiller/megatainer.git
-    dest: $Home/Projects/megatainer
+    dest: $HOME/Projects/megatainer
       
   - repo: https://github.com/Fomiller/chat-stat.git
-    dest: $Home/Projects/chat-stat/
+    dest: $HOME/Projects/chat-stat/
       
   - repo: git@github.com:Fomiller/rustlings.git
-    dest: $Home/Projects/rust/rustlings
+    dest: $HOME/Projects/rust/rustlings
       
   - repo: git@github.com:Fomiller/flappy-dragon.git
-    dest: $Home/Projects/rust/flappy-dragon
+    dest: $HOME/Projects/rust/flappy-dragon
       
   - repo: git@github.com:Fomiller/rusty-dungeon.git
-    dest: $Home/Projects/rust/rusty-dungeon
+    dest: $HOME/Projects/rust/rusty-dungeon
       
   - repo: git@github.com:Fomiller/poggers.git
-    dest: $Home/Projects/poggers
+    dest: $HOME/Projects/poggers
       
   - repo: git@github.com:Fomiller/mixify.git
-    dest: $Home/Projects/mixify
+    dest: $HOME/Projects/mixify
       
   - repo: git@github.com:Fomiller/Adv360-Pro-ZMK.git
-    dest: $Home/Projects/Adv360-Pro-ZMK
+    dest: $HOME/Projects/Adv360-Pro-ZMK
       
   - repo: git@github.com:Fomiller/advent-of-code.git
-    dest: $Home/Projects/advent-of-code
+    dest: $HOME/Projects/advent-of-code
       

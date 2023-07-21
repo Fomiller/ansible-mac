@@ -1,0 +1,78 @@
+- name: Homebrew | Check Installed
+  stat:
+    path: /opt/homebrew/bin/brew
+  register: homebrew_check
+  tags: 
+    - homebrew 
+
+- name: Homebrew | Fail
+  fail:
+    msg: Homebrew is missing, install from http://brew.sh
+  when:
+    - not homebrew_check.stat.exists
+    - not install_homebrew_if_missing
+  tags: 
+    - homebrew 
+
+- name: Homebrew | Install
+  shell: /usr/bin/ruby -e "$ -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when:
+    - not homebrew_check.stat.exists
+    - install_homebrew_if_missing
+  tags: 
+     - homebrew 
+
+- name: Rust | Check Installed
+  stat: 
+    path: $HOME/.cargo/bin/cargo
+  register: cargo_exists
+  ignore_errors: true
+  tags:
+    - rust
+      
+- name: Golang | Check Installed
+  stat: 
+    path: /usr/local/go
+  register: golang_exists
+  ignore_errors: true
+  tags:
+    - golang
+
+- name: Golang | Get Installed Version 
+  command: /usr/local/go/bin/go version 
+  register: golang_current_version
+  when: golang_exists.stat.exists
+  changed_when: false 
+  tags:
+    golang
+    
+- name: Golang | Check Latest Version 
+  uri:
+    url: https://go.dev/VERSION?m=text
+    return_content: yes
+  register: golang_latest_version
+  changed_when: false 
+  tags:
+    - golang
+
+- name: Golang | Set Latest Version
+  set_fact: golang_latest_version="{{ golang_latest_version.content[2:] }}"
+  tags:
+    - golang
+      
+- name: Neovim | Check Installed
+  stat: 
+    path: /usr/local/nvim/bin/nvim
+  register: nvim_exists
+  ignore_errors: true
+  tags:
+    - nvim
+      
+- name: Neovim | Create Install Directory
+  become: true
+  file:
+    path: /usr/local/nvim 
+    state: directory
+  when: not nvim_exists.stat.exists
+  tags:
+    - nvim

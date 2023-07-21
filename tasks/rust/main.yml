@@ -1,0 +1,22 @@
+- name: Rust | Install
+  shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
+  when: 
+    - not cargo_exists.stat.exists
+  tags:
+    - rust
+
+- name: Rust | Update
+  shell: rustup update 
+  tags:
+    - update
+    - rust
+
+- name: Rust | Cargo Install
+  community.general.cargo:
+    name: "{{item}}"
+    state: present
+  loop: "{{data.cargo_binaries}}"
+  register: result
+  until: result is successful
+  tags:
+    - rust

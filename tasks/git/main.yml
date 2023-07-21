@@ -1,0 +1,9 @@
+- name: Git | Clone Repos
+  git:
+    repo: "{{item.repo}}"
+    dest: "{{item.dest}}"
+    clone: yes
+    update: no
+  loop: "{{data.git_repos}}"
+  tags:
+    - git

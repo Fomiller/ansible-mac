@@ -1,0 +1,28 @@
+- name: Homebrew | Update
+  homebrew:
+    update_homebrew: true
+  when: homebrew_check.stat.exists
+  tags:
+    - homebrew
+
+- name: Homebrew | Install Casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  loop: "{{data.brew_casks}}"
+  register: result
+  until: result is successful
+  when: homebrew_check.stat.exists
+  tags:
+    - homebrew
+    
+- name: Homebrew | Install Formulas
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  loop: "{{data.brew_formulas}}"
+  register: result
+  until: result is successful
+  when: homebrew_check.stat.exists
+  tags:
+    - homebrew

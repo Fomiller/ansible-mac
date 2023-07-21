@@ -1,0 +1,28 @@
+- name: Neovim | Install
+  become: true
+  unarchive:
+    src: https://github.com/neovim/neovim/releases/latest/download/nvim-macos.tar.gz
+    dest: /usr/local/nvim 
+    mode: 0755 
+    remote_src: yes 
+    creates: /usr/local/nvim/bin/nvim 
+    extra_opts: 
+      - --strip-components=1
+  when: not nvim_exists.stat.exists
+  tags:
+    - nvim
+      
+# - name: Neovim | Update
+#   become: true
+#   unarchive:
+#     src: https://github.com/neovim/neovim/releases/latest/download/nvim-macos.targ.gz
+#     dest: /usr/local/nvim 
+#     mode: 0755 
+#     remote_src: yes 
+#     creates: /usr/local/nvim/bin/nvim 
+#     extra_opts: 
+#       - --strip-components=1
+#   when: not nvim_exists.stat.exists
+#   tags:
+#     - update
+#     - nvim

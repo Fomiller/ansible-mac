@@ -1,0 +1,24 @@
+- name: Golang | Install
+  become: true
+  unarchive:
+    src: "https://go.dev/dl/go{{ golang_latest_version }}.{{ ansible_os_family|lower }}-{{ ansible_architecture }}.tar.gz"
+    dest: /usr/local
+    mode: 0755
+    remote_src: yes
+    creates: /usr/local/go
+  when: not golang_exists.stat.exists
+  tags:
+    - golang
+      
+- name: Golang | Update
+  become: true
+  unarchive:
+    src: "https://go.dev/dl/go{{ golang_latest_version }}.{{ ansible_os_family|lower }}-{{ ansible_architecture }}.tar.gz"
+    dest: /usr/local
+    mode: 0755
+    remote_src: yes
+    creates: /usr/local/go
+  when: golang_exists.stat.exists and golang_current_version != golang_latest_version
+  tags:
+    - update
+    - golang

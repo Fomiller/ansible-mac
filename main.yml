@@ -19,16 +19,19 @@
         
   tasks:
     - name: Homebrew
-      import_tasks: 'tasks/homebrew/main.yml'
+      import_tasks: 'tasks/homebrew.yml'
  
     - name: Rust
-      import_tasks: 'tasks/rust/main.yml'
+      import_tasks: 'tasks/rust.yml'
 
     - name: Git
-      import_tasks: 'tasks/git/main.yml'
+      import_tasks: 'tasks/git.yml'
           
     - name: Golang
-      import_tasks: 'tasks/golang/main.yml'
+      import_tasks: 'tasks/golang.yml'
         
     - name: Neovim
-      import_tasks: 'tasks/neovim/main.yml'
+      import_tasks: 'tasks/neovim.yml'
+        
+    - name: Dotfiles
+      import_tasks: 'tasks/dotfiles.yml'

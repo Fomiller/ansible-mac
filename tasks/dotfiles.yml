@@ -1,0 +1,25 @@
+- name: Dotfiles | Clone Repo
+  git:
+    repo: https://github.com/Fomiller/.dotiles
+    dest: $HOME/.dotfiles
+    clone: yes
+    update: no
+  tags:
+    - dotfiles
+    - git
+
+- name: Dotfiles | Find Packages to Stow
+  find: 
+    paths: "$HOME/.dotfiles"
+    depth: 1
+    file_type: directory
+  register: dotfiles
+  tags:
+    - dotfiles
+
+- name: Dofiles | Stow
+  shell:
+    cmd: "stow -d $HOME/.dotfiles -t ~/ {{ item.path | basename }} --adopt"
+  with_items: "{{ dotfiles.files }}"      
+  tags:
+    - dotfiles

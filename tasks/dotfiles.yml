@@ -13,13 +13,15 @@
     paths: "$HOME/.dotfiles"
     depth: 1
     file_type: directory
-  register: dotfiles
+  register: packages
   tags:
     - dotfiles
 
 - name: Dofiles | Stow
   shell:
     cmd: "stow -d $HOME/.dotfiles -t ~/ {{ item.path | basename }} --adopt"
-  with_items: "{{ dotfiles.files }}"      
+  with_items: "{{ packages.files }}"      
+  register: result
+  changed_when: 'result.stderr is search("LINK: ")'
   tags:
     - dotfiles

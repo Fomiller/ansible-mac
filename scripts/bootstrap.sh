@@ -1,2 +1,2 @@
 #!/bin/bash
-python -m pip instlal --user ansible
+python -m pip install --user ansible

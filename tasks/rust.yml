@@ -13,9 +13,9 @@
 
 - name: Rust | Cargo Install
   community.general.cargo:
-    name: "{{item}}"
+    name: "{{ item }}"
     state: present
-  loop: "{{data.cargo_binaries}}"
+  loop: "{{ cargo_binaries }}"
   register: result
   until: result is successful
   tags:

@@ -1,23 +1,32 @@
-- name: Install software
+- name: Mac Playbook
   hosts: localhost
   connection: local
   become: false
   vars:
     install_homebrew_if_missing: false
     upgrade_homebrew_packages: false
+    golang_version: test
       
   pre_tasks:
-    - name: Read Inputs
-      include_vars:
-        file: tasks/inputs.yml
-        name: data
-      tags:
-        - always
-        
-    - name: Run Pre-check
-      import_tasks: 'tasks/common.yml'
+    # - name: Read Inputs
+    #   include_vars:
+    #     file: defaults/main.yml
+    #     name: data
+    #   vars:
+    #     golang_version: test_value
+    #   tags:
+    #     - always
+    #     
+    # - name: Run Pre-check
+    #   import_tasks: 'tasks/common.yml'
         
   tasks:
+    - name: Debug
+      debug:
+        msg: "{{ golang_version }}"
+      tags:
+        - debug
+          
     - name: Homebrew
       import_tasks: 'tasks/homebrew.yml'
  

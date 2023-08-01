@@ -4,6 +4,6 @@
     dest: "{{item.dest}}"
     clone: yes
     update: no
-  loop: "{{data.git_repos}}"
+  loop: "{{ git_repos }}"
   tags:
     - git

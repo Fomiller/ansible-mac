@@ -1,0 +1,122 @@
+golang_version: 1.20.6
+  
+brew_formulas:
+  - ansible
+  - autoconf
+  - awscli
+  - bat
+  - bitwarden-cli
+  - brotli
+  - c-ares
+  - ca-certificates
+  - cdktf
+  - cffi
+  - docker
+  - docutils
+  - fx
+  - gdbm
+  - gettext
+  - gh
+  - git-filter-repo
+  - glow
+  - gnu-tar
+  - helix
+  - icu4c
+  - just
+  - jq
+  - lazydocker
+  - lazygit
+  - libevent
+  - libidn2
+  - libnghttp2
+  - libomp
+  - libssh2
+  - libtermkey
+  - libunistring
+  - libuv
+  - libvterm
+  - libyaml
+  - luajit
+  - luajit-openresty
+  - luv
+  - m4
+  - mpdecimal
+  - msgpack
+  - ncurses
+  - neofetch
+  - neovim
+  - node
+  - node@18
+  - nvm
+  - openssl@1.1
+  - openssl@3
+  - pkg-config
+  - please
+  - pulumi
+  - pycparser
+  - pyenv
+  - python@3.10
+  - python@3.11
+  - python@3.9
+  - pyyaml
+  - readline
+  - redis
+  - ruby
+  - saml2aws
+  - screenresolution
+  - six
+  - skate
+  - sqlite
+  - starship
+  - terraform
+  - terragrunt
+  - tmux
+  - tmuxinator
+  - tree
+  - tree-sitter
+  - twitch-cli
+  - unibilium
+  - utf8proc
+  - wget
+  - xz
+  - yarn
+  - ytop
+  - yq
+    
+brew_casks:
+  - font-hack-nerd-font
+  - iterm2
+  - redis-stack-server
+    
+cargo_binaries:
+  - just
+    
+git_repos:
+  - repo: git@github.com:Fomiller/megatainer.git
+    dest: $HOME/Projects/megatainer
+      
+  - repo: https://github.com/Fomiller/chat-stat.git
+    dest: $HOME/Projects/chat-stat/
+      
+  - repo: git@github.com:Fomiller/rustlings.git
+    dest: $HOME/Projects/rust/rustlings
+      
+  - repo: git@github.com:Fomiller/flappy-dragon.git
+    dest: $HOME/Projects/rust/flappy-dragon
+      
+  - repo: git@github.com:Fomiller/rusty-dungeon.git
+    dest: $HOME/Projects/rust/rusty-dungeon
+      
+  - repo: git@github.com:Fomiller/poggers.git
+    dest: $HOME/Projects/poggers
+      
+  - repo: git@github.com:Fomiller/mixify.git
+    dest: $HOME/Projects/mixify
+      
+  - repo: git@github.com:Fomiller/Adv360-Pro-ZMK.git
+    dest: $HOME/Projects/Adv360-Pro-ZMK
+      
+  - repo: git@github.com:Fomiller/advent-of-code.git
+    dest: $HOME/Projects/advent-of-code
+      
+

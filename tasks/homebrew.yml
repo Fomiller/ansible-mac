@@ -9,7 +9,7 @@
   homebrew_cask:
     name: "{{ item }}"
     state: present
-  loop: "{{data.brew_casks}}"
+  loop: "{{ brew_casks }}"
   register: result
   until: result is successful
   when: homebrew_check.stat.exists
@@ -20,7 +20,7 @@
   homebrew:
     name: "{{ item }}"
     state: present
-  loop: "{{data.brew_formulas}}"
+  loop: "{{ brew_formulas }}"
   register: result
   until: result is successful
   when: homebrew_check.stat.exists

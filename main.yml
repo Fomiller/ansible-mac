@@ -11,12 +11,6 @@
       import_tasks: 'tasks/common.yml'
         
   tasks:
-    - name: Debug
-      debug:
-        msg: "{{ golang_version }}"
-      tags:
-        - debug
-          
     - name: Homebrew
       import_tasks: 'tasks/homebrew.yml'
  

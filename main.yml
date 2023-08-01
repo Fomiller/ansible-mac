@@ -5,20 +5,10 @@
   vars:
     install_homebrew_if_missing: false
     upgrade_homebrew_packages: false
-    golang_version: test
       
   pre_tasks:
-    # - name: Read Inputs
-    #   include_vars:
-    #     file: defaults/main.yml
-    #     name: data
-    #   vars:
-    #     golang_version: test_value
-    #   tags:
-    #     - always
-    #     
-    # - name: Run Pre-check
-    #   import_tasks: 'tasks/common.yml'
+    - name: Run Pre-check
+      import_tasks: 'tasks/common.yml'
         
   tasks:
     - name: Debug

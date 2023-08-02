@@ -5,17 +5,15 @@
   tags:
     - python
     - pyenv 
-    - debug
 
 - name: Python | Pyenv | Set Variables
   set_fact: 
-    pyenv_bin_path: "{{ homebrew_pkg_dir }}pyenv" 
+    pyenv_bin_path: "{{ homebrew_pkg_dir }}/pyenv" 
     pyenv_root: "{{ ansible_env.HOME }}/.pyenv"
   when:  pyenv_check.stat.exists == true
   tags:
     - python
     - pyenv 
-    - debug
   
 - name: Python | Pyenv | Install Global Python Versions
   shell:
@@ -26,7 +24,6 @@
   tags:
     - python
     - pyenv 
-    - debug
       
 - name: Python | Virtualenvwrapper | List Virtualenvs
   shell: |
@@ -39,7 +36,6 @@
     - python
     - pyenv 
     - virtualenv
-    - debug
       
 - name: Python | Virtualenvwrapper | mkvirtualenvs
   shell: |
@@ -54,7 +50,6 @@
     - python
     - pyenv 
     - virtualenv
-    - debug
       
 - name: Python | Pyenv | Set Global Python Version
   shell:
@@ -63,5 +58,4 @@
   tags:
     - python
     - pyenv 
-    - debug
 

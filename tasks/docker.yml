@@ -1,0 +1,7 @@
+- name: Docker | Pull Images
+  community.docker.docker_image:
+    name: item
+    source: pull
+  with_items: "{{ docker_images }}"
+  tags:
+    - docker

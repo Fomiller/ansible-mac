@@ -34,3 +34,6 @@
         
     - name: Python
       import_tasks: 'tasks/python.yml'
+
+    - name: Docker
+      import_tasks: 'tasks/docker.yml'

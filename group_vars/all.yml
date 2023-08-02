@@ -8,7 +8,10 @@ pyenv_python_versions:
 python_virtualenvs:
   - name: dev
     version: 3.11.4
-  
+pip_packages:
+  - requests
+docker_images:
+  - fomiler/megatainer
 brew_formulas:
   - ansible
   - autoconf

@@ -59,3 +59,10 @@
     - python
     - pyenv 
 
+- name: Python | Pip | Install
+  pip:
+    name: item
+  with_items: "{{ pip_packages }}"
+  tags:
+    - python
+    - pip

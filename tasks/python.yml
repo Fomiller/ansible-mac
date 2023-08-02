@@ -1,0 +1,67 @@
+- name: Python | Pyenv | Check Installed
+  stat:
+    path: "{{ homebrew_pkg_dir }}/pyenv"
+  register: pyenv_check
+  tags:
+    - python
+    - pyenv 
+    - debug
+
+- name: Python | Pyenv | Set Variables
+  set_fact: 
+    pyenv_bin_path: "{{ homebrew_pkg_dir }}pyenv" 
+    pyenv_root: "{{ ansible_env.HOME }}/.pyenv"
+  when:  pyenv_check.stat.exists == true
+  tags:
+    - python
+    - pyenv 
+    - debug
+  
+- name: Python | Pyenv | Install Global Python Versions
+  shell:
+    cmd: "{{ pyenv_bin_path }} install {{ item }} --skip-existing"
+  with_items: "{{ pyenv_python_versions }}" 
+  register: result
+  changed_when: 'result.stderr is search("Installing ")'
+  tags:
+    - python
+    - pyenv 
+    - debug
+      
+- name: Python | Virtualenvwrapper | List Virtualenvs
+  shell: |
+    eval "$($(pyenv which pyenv-sh-virtualenvwrapper))"
+    workon
+  register: list_virtualenvs_result
+  failed_when: list_virtualenvs_result.rc == 127 or list_virtualenvs_result.stderr is search('ERROR:')
+  changed_when: false
+  tags:
+    - python
+    - pyenv 
+    - virtualenv
+    - debug
+      
+- name: Python | Virtualenvwrapper | mkvirtualenvs
+  shell: |
+    eval "$($(pyenv which pyenv-sh-virtualenvwrapper))"
+    mkvirtualenv {{item.name}}
+  environment: 
+    VIRTUALENVWRAPPER_PYTHON: "{{ pyenv_root }}/versions/{{item.version}}/bin/python"
+  when: item.name not in list_virtualenvs_result.stdout_lines
+  with_items: "{{ python_virtualenvs }}"
+  register: virtualenv_result
+  tags:
+    - python
+    - pyenv 
+    - virtualenv
+    - debug
+      
+- name: Python | Pyenv | Set Global Python Version
+  shell:
+    cmd: "{{ pyenv_bin_path }} global {{ pyenv_global_python_version }}"
+  changed_when: false
+  tags:
+    - python
+    - pyenv 
+    - debug
+

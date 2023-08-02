@@ -1,6 +1,6 @@
 - name: Homebrew | Check Installed
   stat:
-    path: "{{'/usr/local/Homebrew/bin/brew' if ansible_architecture == 'x86_64' else '/opt/homebrew/bin/brew' }}"
+    path: "{{ homebrew_dir }}"
   register: homebrew_check
   tags: 
     - homebrew 

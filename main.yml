@@ -5,6 +5,8 @@
   vars:
     install_homebrew_if_missing: false
     upgrade_homebrew_packages: false
+    homebrew_dir: "{{'/usr/local/Homebrew/bin/brew' if ansible_architecture == 'x86_64' else '/opt/homebrew/bin/brew' }}"
+    homebrew_pkg_dir: "{{'/usr/local/bin' if ansible_architecture == 'x86_64' else '/opt/homebrew/bin/' }}"
       
   pre_tasks:
     - name: Run Pre-check
@@ -29,3 +31,6 @@
         
     - name: Dotfiles
       import_tasks: 'tasks/dotfiles.yml'
+        
+    - name: Python
+      import_tasks: 'tasks/python.yml'

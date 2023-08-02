@@ -61,7 +61,7 @@
 
 - name: Python | Pip | Install
   pip:
-    name: item
+    name: "{{ item }}"
   with_items: "{{ pip_packages }}"
   tags:
     - python

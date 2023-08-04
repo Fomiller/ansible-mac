@@ -1,6 +1,6 @@
 # Ansible Macbook Setup
 
-### Todos
+## Todos
 - [x] Homebrew setup
 - [x] Rust install 
 - [x] Rust update
@@ -21,4 +21,11 @@
 - [x] Tmux install 
 - [x] Dotfiles install
 - [ ] App install (spotify, chrome, firefox, etc.)?
+- [ ] Git setup
 - [x] Break apart ansible playbook into tasks
+
+## Remote execute setup script
+Checks for Homebrew and installs if necessary. Installs Ansible with Homebrew if necessary.
+```
+bash <(curl -s https://raw.githubusercontent.com/Fomiller/ansible-mac/main/scripts/setup.sh)
+```

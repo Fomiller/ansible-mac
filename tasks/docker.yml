@@ -1,6 +1,13 @@
+- name: Docker | Docker Hub Login
+  docker_login:
+    username: "{{ docker_hub_user }}"
+    password: "{{ docker_hub_password }}" 
+  tags:
+    - docker
+      
 - name: Docker | Pull Images
   community.docker.docker_image:
-    name: item
+    name: "{{ item }}"
     source: pull
   with_items: "{{ docker_images }}"
   tags:

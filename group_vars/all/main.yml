@@ -1,3 +1,4 @@
+my_all_pass: my_all_pass
 golang_version: 1.20.6
 pyenv_global_python_version: 3.11.4
 pyenv_python_versions:
@@ -11,7 +12,7 @@ python_virtualenvs:
 pip_packages:
   - requests
 docker_images:
-  - fomiler/megatainer
+  - fomiller/megatainer
 brew_formulas:
   - ansible
   - autoconf

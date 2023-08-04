@@ -104,6 +104,8 @@ brew_casks:
 cargo_binaries:
   - just
     
+git_email: forrestmillerj@gmail.com
+git_name: Forrest Miller
 git_repos:
   - repo: git@github.com:Fomiller/megatainer.git
     dest: $HOME/Projects/megatainer

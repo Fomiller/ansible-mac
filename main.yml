@@ -16,12 +16,12 @@
     - name: Homebrew
       import_tasks: 'tasks/homebrew.yml'
       when: ansible_facts['os_family'] == "Darwin"
+        
+    - name: Git
+      import_tasks: 'tasks/git.yml'
  
     - name: Rust
       import_tasks: 'tasks/rust.yml'
-
-    - name: Git
-      import_tasks: 'tasks/git.yml'
           
     - name: Golang
       import_tasks: 'tasks/golang.yml'

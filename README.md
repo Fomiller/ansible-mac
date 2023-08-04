@@ -21,7 +21,7 @@
 - [x] Tmux install 
 - [x] Dotfiles install
 - [ ] App install (spotify, chrome, firefox, etc.)?
-- [ ] Git setup
+- [x] Git setup
 - [x] Break apart ansible playbook into tasks
 
 ## Remote execute setup script

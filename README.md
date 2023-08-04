@@ -7,8 +7,8 @@
 - [x] Install Cargo binaries
 - [x] Go install (installed with homebrew, would like to find different method)
 - [x] Go update to latest version
-- [ ] Python version setup (using pyenv)
-- [ ] Python virtualenvs setup
+- [x] Python version setup (using pyenv)
+- [x] Python virtualenvs setup
 - [x] Clone all git repos
 - [x] Terraform install (using homebrew)
 - [x] Terraform update (using homebrew)
@@ -18,7 +18,7 @@
 - [x] Podman install (using homebrew)
 - [x] Neovim install
 - [ ] Neovim update (will need to get latest tags and parse through to find the latest)
-- [ ] Tmux install 
-- [ ] Dotfiles install
+- [x] Tmux install 
+- [x] Dotfiles install
 - [ ] App install (spotify, chrome, firefox, etc.)?
 - [x] Break apart ansible playbook into tasks

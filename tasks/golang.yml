@@ -1,7 +1,7 @@
 - name: Golang | Install
   become: true
   unarchive:
-    src: "https://go.dev/dl/go{{ golang_latest_version }}.{{ ansible_os_family|lower }}-{{ ansible_architecture }}.tar.gz"
+    src: "https://go.dev/dl/{{ golang_latest_version }}.{{ ansible_os_family|lower }}-{{ ansible_architecture }}.tar.gz"
     dest: /usr/local
     mode: 0755
     remote_src: yes
@@ -13,7 +13,7 @@
 - name: Golang | Update
   become: true
   unarchive:
-    src: "https://go.dev/dl/go{{ golang_latest_version }}.{{ ansible_os_family|lower }}-{{ ansible_architecture }}.tar.gz"
+    src: "https://go.dev/dl/{{ golang_latest_version }}.{{ ansible_os_family|lower }}-{{ ansible_architecture }}.tar.gz"
     dest: /usr/local
     mode: 0755
     remote_src: yes

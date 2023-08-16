@@ -60,9 +60,17 @@
     - golang
 
 - name: Golang | Set Latest Version
-  set_fact: golang_latest_version="{{ golang_latest_version.content[2:] }}"
+  set_fact: golang_latest_version="{{ golang_latest_version.content.split()[0] }}"
   tags:
     - golang
+    - debug
+      
+- name: Debug
+  debug:
+    msg: "VERSION: {{golang_latest_version}}"
+  tags:
+    - golang
+    - debug
       
 - name: Neovim | Check Installed
   stat: 

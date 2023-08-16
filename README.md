@@ -29,3 +29,28 @@ Checks for Homebrew and installs if necessary. Installs Ansible with Homebrew if
 ```
 bash <(curl -s https://raw.githubusercontent.com/Fomiller/ansible-mac/main/scripts/setup.sh)
 ```
+
+## Setup from nothing mac 
+Set mac to show hidden files in finder
+```
+defaults write com.apple.Finder AppleShowAllFiles true
+killall Finder
+```
+Add user R/W permissions to .config dir if necessary
+Install Homebrew
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+Install Ansible
+```
+brew install ansible
+```
+Clone Ansible playbook
+```
+git clone https://github.com/Fomiller/ansible-mac
+```
+Setup vault and become password files
+```
+echo <your vault pass> vault_pass.txt
+echo <your become pass> become_pass.txt
+```

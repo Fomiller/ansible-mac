@@ -95,7 +95,8 @@ brew_formulas:
   - yarn
   - ytop
   - yq
-    
+brew_taps:
+  - homebrew/cask-fonts
 brew_casks:
   - font-hack-nerd-font
   - iterm2

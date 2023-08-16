@@ -4,7 +4,16 @@
   when: homebrew_check.stat.exists
   tags:
     - homebrew
-
+      
+- name: Homebrew | Install Taps
+  homebrew_tap:
+    name: "{{ item }}"
+  loop: "{{ brew_taps }}"
+  tags:
+    - homebrew 
+    - taps
+    - casks
+      
 - name: Homebrew | Install Casks
   homebrew_cask:
     name: "{{ item }}"
@@ -15,6 +24,7 @@
   when: homebrew_check.stat.exists
   tags:
     - homebrew
+    - casks
     
 - name: Homebrew | Install Formulas
   homebrew:
@@ -26,3 +36,4 @@
   when: homebrew_check.stat.exists
   tags:
     - homebrew
+    - formulas

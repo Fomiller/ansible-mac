@@ -97,6 +97,9 @@ brew_formulas:
   - yq
 brew_taps:
   - homebrew/cask-fonts
+  - thought-machine/please
+  - warrensbox/tap
+  - cjbassi/ytop
 brew_casks:
   - font-hack-nerd-font
   - iterm2

@@ -5,6 +5,7 @@
   vars:
     install_homebrew_if_missing: false
     upgrade_homebrew_packages: false
+    homebrew_task: true
     homebrew_dir: "{{'/usr/local/Homebrew/bin/brew' if ansible_architecture == 'x86_64' else '/opt/homebrew/bin/brew' }}"
     homebrew_pkg_dir: "{{'/usr/local/bin' if ansible_architecture == 'x86_64' else '/opt/homebrew/bin' }}"
       
@@ -15,7 +16,7 @@
   tasks:
     - name: Homebrew
       import_tasks: 'tasks/homebrew.yml'
-      when: ansible_facts['os_family'] == "Darwin"
+      when: ansible_facts['os_family'] == "Darwin" and homebrew_task == true
         
     - name: Git
       import_tasks: 'tasks/git.yml'

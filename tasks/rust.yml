@@ -6,7 +6,7 @@
     - rust
 
 - name: Rust | Update
-  shell: rustup update 
+  shell: ~/.cargo/bin/rustup update 
   tags:
     - update
     - rust

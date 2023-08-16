@@ -54,3 +54,4 @@ Setup vault and become password files
 echo <your vault pass> vault_pass.txt
 echo <your become pass> become_pass.txt
 ```
+Setup personal access token or ssh key with github

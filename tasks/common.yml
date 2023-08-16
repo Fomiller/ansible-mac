@@ -2,6 +2,8 @@
   stat:
     path: "{{ homebrew_dir }}"
   register: homebrew_check
+  when:
+    - homebrew_task
   tags: 
     - homebrew 
 
@@ -11,6 +13,7 @@
   when:
     - not homebrew_check.stat.exists
     - not install_homebrew_if_missing
+    - homebrew_task
   tags: 
     - homebrew 
 
@@ -19,6 +22,7 @@
   when:
     - not homebrew_check.stat.exists
     - install_homebrew_if_missing
+    - homebrew_task
   tags: 
      - homebrew 
 

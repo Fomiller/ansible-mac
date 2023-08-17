@@ -1,2 +1,4 @@
 tmp/
 vault_pass
+become_pass.txt
+vault_pass.txt

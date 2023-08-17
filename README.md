@@ -20,9 +20,14 @@
 - [ ] Neovim update (will need to get latest tags and parse through to find the latest)
 - [x] Tmux install 
 - [x] Dotfiles install
-- [ ] App install (spotify, chrome, firefox, etc.)?
+- [x] App install (spotify, chrome, firefox, etc.)?
 - [x] Git setup
 - [x] Break apart ansible playbook into tasks
+- [ ] Podman setup, docker alias script https://podman-desktop.io/docs/migrating-from-docker/emulating-docker-cli-with-podman
+- [ ] More through iterm setup, themes etc.
+- [ ] Apple specific stuff, show hidden files, enable darkmode, etc. 
+- [ ] Git authentication setup using ssh/access_token.
+- [ ] More robust language install for Go, Rust, Python (had to do two passes, and set global pyenv version to work)
 
 ## Remote execute setup script
 Checks for Homebrew and installs if necessary. Installs Ansible with Homebrew if necessary.
